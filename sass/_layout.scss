@@ -1,0 +1,296 @@
+.container{
+        width: 120rem;
+        box-shadow: 0 1rem 6rem rgba(0, 0, 0, 0.637);
+        min-height: 50rem;
+        margin: 8rem auto;
+        background-color: var(--color-grey-light-1);
+
+        @media only screen and (max-width:$bp-largest){
+            margin: 0;
+            width: 100%;
+            max-width: 100%;
+        }
+    .header{
+        height: 7rem;
+        background-color: #fff;
+        overflow: hidden;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid var(--color-grey-light-4);
+        @media only screen and (max-width:$bp-small){
+           flex-wrap: wrap;
+           height: 9rem;
+        }
+    }
+
+    .content{
+        display: flex;
+
+        @media only screen and (max-width: $bp-medium){
+          display: block;
+        }
+    }
+
+    .sidebar{
+        background-color: var(--color-grey-dark-1);
+        flex: 0 0 18%;
+      
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .main{
+        background-color: var(--color-grey-light-1);
+        flex: 1;
+    }
+    .details{
+        display: flex;
+        margin: 3.5rem;
+        @media only screen and (max-width:$bp-medium){
+           margin: 2.5rem;
+        }
+
+        @media only screen and (max-width: $bp-small){
+            display: block;
+        }
+    }
+    .description{
+        background-color: #fff;
+        flex: 0 0 60%;
+        padding: 3.5rem;
+        margin-right: 3.5rem;
+        font-size: 1.4rem;
+        color: var(--color-grey-dark-2);
+        box-shadow: 0 .5rem .5rem rgba(0, 0, 0, 0.123);
+        @media only screen and (max-width:$bp-medium){
+            margin-right: 2.5rem;
+            padding: 2.5rem;
+         }
+        @media only screen and (max-width:$bp-small){
+            margin-right: 0;
+            margin-bottom: 2.5rem;
+         }
+        .text{
+            font-family: inherit;
+            padding-bottom: 2rem;
+            border-bottom: .1rem solid var(--color-grey-light-4);
+
+            .paragraph:not(:last-child){
+                margin-bottom: 2rem;
+            }
+        }
+
+        .list{
+            padding: 3rem 1.5rem;
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            border-bottom: .1rem solid var(--color-grey-light-4);
+            .item{
+                width: 50%;
+                display: inline;
+                position: relative;
+                margin-bottom: .8rem;
+                &::before{
+                    content: "";
+                    
+                    height: 1.5rem;
+                    width: 1.5rem;
+                    position: absolute;
+                    top: 0;
+                    left: -2rem;
+
+                    @supports ( -webkit-mask-image: url(../img/chevron-thin-right.svg)) and (-webkit-mask-size: cover){
+                        background-color: var(--color-primary);
+                    -webkit-mask-image: url(../img/chevron-thin-right.svg);
+                    -webkit-mask-size: cover;
+                    }
+
+                   
+                    background-image: url(../img/chevron-thin-right.svg);
+                    
+                    
+                }
+            }
+        }
+
+        .recommend{
+            display: flex;
+            padding: 1rem 0;
+            align-items: center;
+            justify-content: space-between;
+            &-text{
+                font-size: 1.2rem;
+                margin-right: 0 auto;
+            }
+
+            .img{
+                display: inline-block;
+                height: 4rem;
+                width: 4rem;
+                border-radius: 50%;
+                margin-left: -1.5rem;
+                border: .4rem solid #fff;
+                box-sizing: content-box;
+                @media only screen and (max-width: $bp-medium){
+                    width: 2.5rem;
+                height: 2.5rem;
+                }
+            }
+        }
+    }
+    .review{
+        flex: 1;
+        font-size: 1.4rem;
+        color: #777;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+       
+        &-user{
+            background-color: #fff;
+            padding: 3.5rem;
+            margin-bottom: 4rem;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            box-shadow: 0 .5rem .5rem rgba(0, 0, 0, 0.123);
+            @media only screen and (max-width:$bp-medium){
+                padding: 2.5rem;
+                margin-bottom: 2.5rem;
+             }
+            
+            &::before{
+                content: "\201C";
+                font-size: 18rem;
+                position: absolute;
+                top: -7rem;
+                left: 0rem;
+                color: var(--color-grey-light-2);
+                z-index: 1;
+            }
+
+        }
+        .text{
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 2;
+        }
+        .user{
+            display: flex;
+
+            &-data{
+                display: block;
+                margin-right: auto;
+            }
+            &-name{
+
+            }
+            &-image{
+                width: 4rem;
+                height: 4rem;
+                border-radius: 50%;
+                
+            }
+            &-date{
+                font-size: 1rem;
+            }
+        }
+        
+        .user-rating{
+            font-size: 3rem;
+            color: var(--color-primary);
+
+        } 
+        
+        &-button{
+            background-color: transparent;
+            color: var(--color-primary);
+            border: none;
+            border-bottom: solid .1rem currentColor;
+            font-size: 1.5rem;
+            &:hover{
+                margin-left: -.2rem;
+                color: rgb(59, 58, 58);
+
+            }
+            &:hover span{
+                margin-left: .4rem;
+            }
+        }
+    }
+
+    .book{
+        background-color: white;
+        padding: 4rem;
+        text-align: center;
+
+        @media only screen and (max-width:$bp-medium){
+           padding: 2rem;
+         }
+       
+
+        &-heading{
+            text-transform: uppercase;
+            font-weight: 400;
+            font-size: 1.7rem;
+            margin-bottom: 3rem;
+
+            @media only screen and (max-width:$bp-medium){
+               font-size: 1.3rem;
+               margin-bottom: 2rem;
+             }
+            
+             @media only screen and (max-width:$bp-small){
+                font-size: 1.1rem;
+              }
+        }
+
+        .book-button{
+            position: relative;
+            color: #fff;
+            // color: black;
+            font-size: 1.7rem;
+            border-radius: 5rem;
+            padding: .5rem 2rem;
+            border: none;
+            outline: none;
+            overflow: hidden;
+            background-color: transparent;
+            background-image: linear-gradient(to right, var(--color-primary-dark) 50%, var(--color-primary-light));
+
+            @media only screen and (max-width:$bp-medium){
+               padding: .3rem 1rem;
+             }
+            @media only screen and (max-width:$bp-small){
+               padding: .1rem .5rem;
+             }
+           
+            span{
+                display: block;
+                transition: transform .1s ;
+            }
+            .span-rooms{
+                transform: translate(0 , -4rem);
+            }
+            .span-booking{
+                 transform: translate(0rem , -1rem);
+            }
+
+            &:hover .span-rooms{
+                transform: translate(0rem , 1rem);
+            }
+            &:hover .span-booking{
+                transform: translate(0 ,4rem);
+            }
+            &:hover{
+                background-image: linear-gradient(to right, var(--color-primary-light) 50%, var(--color-primary-dark));
+                cursor: pointer;
+            }
+        }
+
+    }
+}
